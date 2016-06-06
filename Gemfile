@@ -12,6 +12,7 @@ gem "twitter-bootstrap-rails"
 gem "therubyracer"
 gem "less-rails"
 gem "faraday"
+gem 'figaro'
 
 group :development, :test do
   gem 'byebug'
