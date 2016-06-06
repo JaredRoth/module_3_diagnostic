@@ -7,7 +7,8 @@ RSpec.feature "User can search by zipcode" do
     fill_in "zip", with: '80203'
     click_on "Locate"
 
-    expect(current_path).to eq("/search?zip=80203")
+    # expect(current_path).to eq("/search?zip=80203")
+    expect(current_path).to eq("/search")
     expect(page).to have_content("1.")
     expect(page).to have_content("10.")
     expect(page).to_not have_content("11.")
