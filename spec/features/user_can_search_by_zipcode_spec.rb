@@ -9,22 +9,15 @@ RSpec.feature "User can search by zipcode" do
 
     # expect(current_path).to eq("/search?zip=80203")
     expect(current_path).to eq("/search")
-    expect(page).to have_content("1.")
-    expect(page).to have_content("10.")
-    expect(page).to_not have_content("11.")
+    within("#1") do
+      expect(page).to have_content("UDR	800 Acoma St	ELEC	0.3117 miles	24 hours daily")
+    end
+    expect(page).to_not have_content("11:")
 
-    expect(page).to_not have_content("Gasoline")
-    expect(page).to_not have_content("Gas")
-
-
+    expect(page).to_not have_content("BD")
+    expect(page).to_not have_content("CNG")
+    expect(page).to_not have_content("E85")
+    expect(page).to_not have_content("HY")
+    expect(page).to_not have_content("LNG")
   end
 end
-
-# As a user
-# When I visit "/"
-# And I fill in the search form with 80203
-# And I click "Locate"
-# Then I should be on page "/search?zip=80203"
-# Then I should see a list of the 10 closest stations within 6 miles sorted by distance
-# And the stations should be limited to Electric and Propane
-# And for each of the stations I should see Name, Address, Fuel Types, Distance, and Access Times

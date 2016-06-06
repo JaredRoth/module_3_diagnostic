@@ -6,7 +6,7 @@ class NrelService
   end
 
   def search_by_zip
-    response = @connection.get "api/alt-fuel-stations/v1/nearest.json?location=#{@params[:zip]}&radius=6&fuel_type=ELEC,LPG"
+    response = @connection.get "api/alt-fuel-stations/v1/nearest.json?location=#{@params[:zip]}&radius=6&fuel_type=ELEC,LPG&limit=10"
     JSON.parse(response.body, symbolize_names: true)
   end
 end

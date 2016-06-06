@@ -1,7 +1,7 @@
 <div class="results">
-  <table>
+  <table class="table">
     <tr>
-      <th>Result:</th>
+      <th></th>
       <th>Name</th>
       <th>Address</th>
       <th>Fuel Types</th>
@@ -9,13 +9,13 @@
       <th>Access Times</th>
     </tr>
     <% @results[:fuel_stations].each_with_index do |station, i| %>
-      <tr>
-        <td><%= i %>.</td>
-        <td><%= station_name %></td>
-        <td>Jill</td>
-        <td>Jill</td>
-        <td>Smith</td>
-        <td>50</td>
+      <tr id="<%= i+1 %>">
+        <td><%= i+1 %>.</td>
+        <td><%=station[:station_name] %></td>
+        <td><%=station[:street_address] %></td>
+        <td><%=station[:fuel_type_code] %></td>
+        <td><%=station[:distance] %> miles</td>
+        <td><%=station[:access_days_time] %></td>
       </tr>
     <% end %>
 </table>
