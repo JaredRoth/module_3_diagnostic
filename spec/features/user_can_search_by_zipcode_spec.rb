@@ -12,6 +12,7 @@ RSpec.feature "User can search by zipcode" do
     within("#1") do
       expect(page).to have_content("UDR	800 Acoma St	ELEC	0.3117 miles	24 hours daily")
     end
+  
     expect(page).to_not have_content("11:")
 
     expect(page).to_not have_content("BD")
